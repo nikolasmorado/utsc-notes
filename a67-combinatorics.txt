@@ -82,6 +82,3 @@ combination
                         (n+r-1)!
         C(n+r-1, r) = --------------
                        r! * (n-1)!
-
-Cut Edge
-    

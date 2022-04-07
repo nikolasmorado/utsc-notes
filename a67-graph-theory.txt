@@ -1,0 +1,36 @@
+graph
+    set of nodes and edges
+
+    G = (V, E)
+
+    diagraph - directional graph
+        graph where edges are directional
+    
+    multigraph
+        multiple edges can connect the same pair of nodes
+        
+        not assumed unless otherwise stated
+    
+    drawn as dots and lines
+        house graph
+
+            O
+           / \
+          O - O
+          |   |
+          O - O
+
+
+
+nodes
+    verticies
+
+edge
+    connects two nodes
+    not directional unless otherwise stated
+        (u, v) = (v, u)
+    an edge connecting a node to itself is a loop
+
+mu
+
+
