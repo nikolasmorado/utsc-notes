@@ -1,0 +1,321 @@
+linear equations
+    coefficients * variables added together give a constant
+    in two variables is a straight line
+
+linear system
+    system of linear equations
+    a collection of linear equations that must all be true at the same time 
+
+        {x-y=0
+        {x+y=1
+            the solution is where they meet
+            their intesection is the solution to the system
+            satisifies all the equations
+                provides a point for all of them
+    
+        {x+y=3
+        {y-x=5
+            solved by (-1,4)
+                -1+4    = 3
+                4--1    = 5
+
+        general form
+            form of a linear system system in n variables with m equations
+
+                a_1_1 x_1 + a_1_2 x_2 + ... + a_1 n * n = b_1
+                a_2_1 x_1 + a_2_2 x_2 + ... + a_2 n * n = b_1
+                                        ...
+                a_m_1 x_1 + a_m_2 x_2 + ... + a_m n * n = b_1          
+
+                a_ij = the coefficient of x_j in row i
+
+        ex:
+            solve ax=b
+                depends on wether a and b are 0 or not
+                    if a==0
+                        if b==0
+                            no solutions
+                        else
+                            infinite solutions
+                    else
+                        x=b/a, one unique solution 
+
+        ex:
+            solve   x+y=1
+                      y=2
+                plug y=2 the above equation:    x+2=1
+                solve for x:                     x=-1
+
+                therefore (-1,2) is a solution for the system
+                plugging in isnt algorithmic so thats bad
+
+        ex:
+            solve   x +z=1
+                     y+z=2
+
+                infinitely many solutions
+                    any value of z will be a solution
+                
+                x=1-z
+                y=2-z
+                z=0+z
+
+
+                [x    [1    [-1 
+                 y  =  2  +  -1 z
+                 z]    0]     1]
+
+                z is a parameter of the equation
+                    every value of z will give a solution to the system
+
+augmented matrices
+    a way to represent a linear system as a matrix of numbers
+
+        1x+2y=3    <==>     [ 1 2 | 3 ]
+        4x+59=6             [ 4 5 | 6 ]
+
+    each variable becomes a column
+    equal sign becomes a vertical bar
+    constants on the right hand side of the vertical bar
+
+elementary row operations
+    type1
+        interchange two equations
+        does not change the equations at all - exact same set of solutions
+    type2
+        multiply an equation by a nonzero number
+        a_i1 x_1 + ... a_in x_n = bi
+        this changes the number past the bar
+    type3
+        add a multiple of one equation to a different
+    solving systems using elementary row oprtations
+        a row of zeroes means that column cant be solved for
+            means that variable is actually a parameter
+    can manipulate matricies
+        attempts to simplify matrices
+        easy to find general solutions
+        unique simplest form 
+
+row echelon matrix
+    row echelon form
+        any rows of all 0s are at the bottom
+        the first nonzero entry of each row is a 1
+            called the leading 1 or the pivot
+        it kinda just looks like a staircase
+        each leading 1 is to the right of the one above it
+
+    reduced row echelon form
+        same rules as ref with an addition
+        the cilumn of each leading 1 must contain only 0s except for the leading 1
+
+    all rref are ref
+        reverse is not necessarily true
+
+    same possibilitis as ax=b <=> [a|b]
+        if a==0
+            if b==0
+                no solutions
+            else
+                infinite solutions
+        else
+            x=b/a, one unique solution
+
+    columns without leading 1s become parameters
+        each parameter of a solution creations a basic solution
+
+rref algorithms
+    silly
+        1   check if rref
+        2   fix rule breaking entries
+        3   go to 1
+    
+    gaussian
+        1   if matrix is entirely 0s stop
+        2   find first column from left with a non0 and move the row contaning it to the top position (call the non0 a)
+        3   multiple the new top row by 1/a to create a leading 1
+        4   subtracting multiples of that row from rows below it, clear the column of the leading 1
+        5   repeat 1-4 on the remaning rows
+
+homogenous systems
+    always have a solution
+        this is called the trivial solution
+     as a matrix         as a system of linear equations
+    [ * * * | 0 ]       { a_11 x1 + ... + a_1n x_n = 0
+    [ * * * | 0 ]       {           ...
+    [ * * * | 0 ]       { a_n1 x1 + ... + a_nn x_n = 0
+
+    solving a system via a homogenous system
+        to find a general solution set the constants to 0
+        to find a particular solution set the parameter to 0
+
+    every solution is a linear combination
+
+linear combination
+    a linear combination of a collection of vectors is a vector of the form
+        v = a_1 v_1 + ... + a_n v_n
+        vector = vector*number + vector*number ...
+    youre just combining the vectors
+
+rows and columns
+    ij
+    a_ij is the ith row and the jth column
+
+matrix addition
+    must be same size (n by k)
+        not all matrices can be added together
+    you ad the corresponding entries in each matrix
+
+scaling a matrix
+    also called multiplying by a scalar
+    k is a real number
+    A = [a_ij]
+    kA = [ka_ij]
+
+transposition
+    rotating it
+        you swap the rows and the columns
+        reflecting across the diagnal (square matrices)
+    A^T for A = a_ij = a_ji
+
+    (A+B)^T = A^T + B^T 
+
+vectors
+    what is a vector R^n
+        n*1 matrix
+            n rows and 1 column
+        coordinates
+            origin is at [0,0,...,0]
+
+linear systems as equations of vectors
+    each column (variable) is a vector
+        can name x_1 x_2
+    linear systems are vectors
+
+matrix vector multiplication
+    multiply the columns of the matrix by the rows of the vector
+
+homogenous decomposition
+    every solutiuon ax=b has the form x=x_0 + x_p
+        x_0 is a solution of the homogenous system
+        x_p is a particular solution
+
+matrix matrix multiplication
+    each row of matrix A * ceach column of matrix b
+    size
+        n*k k*l = n*l
+        2*3 3*2 = 2*2
+    how to
+        r1A*c1B     r1A*c2B
+        r2A*c1B     r2A*c2B
+
+        for ij
+             n
+            ---
+            \   a_ik b_bkj 
+            /
+            ---
+            k=1
+    not commutative
+
+    a11 a12 a13         b11 b12
+    a21 a22 a23         b21 b22
+                        b31 b32
+        
+    a11*b11 + a12*b21 + a13 * b31       a11*b12 + a12*b22 + a13*b32
+    a21*b11 + a21*b22 + a23 * b31       a21*b12 + a21*b22 + a23*b32
+
+identity matrix
+    n*n = I_n
+    multiplying any matrix by the identity matrix will return the initial matrix
+    I_n * A = A for any A
+
+    just has 1s along the diagonal and all 0s 
+
+    [1   0   0]
+    [0   1   0]
+    [0   0   1]
+
+inverses
+    A = n*n matrix
+    B is an inverse for A if 
+        AB = BA = I_n
+
+    to invert a matrix set its constants to the identity matrix for its size
+    then try get the matrix itself to look like the identity matrix and whats left as the constants is the inverse
+
+    matrix inversion algorithm
+        1   set up augmented system [A|I_n]
+        2   apply gaussian algorithm to the system to obtain [R|A'] with R=RREF(A)
+        3   if R = I_n then A^-1 = A'
+        4   if R != I_n then A is not invertable
+    
+elementary matrices 
+    a matrix that can be obtained from the identity matrix by a single row operation
+    a matrix is invertible iff it is the product of elementary matrices
+
+linear transformations
+    a linear transformation is a function T: R^n -> R^k such that
+        T(x + y) = T(x) + T(y)
+        T(ax) = aT(x)
+    
+    two important examples
+        T(x) = λx
+            stretch all by a fator of λ
+        T_A (X) = Ax
+            multiplication by a matrix A
+
+eigenvalues and eigenvectors
+    an eigenvalue of A is a number λ such that
+        Ax = λx
+    for a nonzero vector x
+
+    eigen=own/belong
+        particular for each matrix
+    
+    come in pairs
+        every eigenvector A has a corresponding eigenvalue λ
+
+    how to find eigenvalues
+        Ax = λx = (λI) x <=> (λIx)-Ax = 0 <=> (λI-A)x = 0
+
+        solve det(λI-A) = 0
+    
+    how to find eigenvectors
+        solve homogenous system (λI-A)x = 0
+            homogenous so always will have a solution
+            λI-A is not invertible
+                means has a parameter
+                    has a nontrivial solution
+
+    the characteristic polynomial of A
+        C(λ) = det(λI-A)
+
+    let us calculate large powers
+
+determinants
+    det a   b   =   ad-bc
+        c   d
+
+    det(abcd) = 0 <=> (abcd) is not invertable
+
+    if A = [a], then det(a) = a
+    if a A has a r/c of all 0s then det(A) = 0
+    if two distinct rows or clumns are interchange then the result's determinant is -det(A)
+    if a r/c of A is mulitiplied by a constant u, ... is u det(A)
+    if two distinct rows or columns of A are identical then det(A)=0
+    if a multiple of one r/c of A is added to a different r/c ... is det(A)
+    if A is square, then det(A^T) = det(A)
+    
+
+subspace
+    subspaces of R^n
+        zero vector 0 isin U
+        if x isin U then x+y isin U
+        if x isin U then ax isin U for every real number a
+
+diagonalization
+    if all entries off of the main diagonal are 0
+    diag(λ_1, λ_2, λ_3, ..., λ_n)
+
+orthogonality
+    if A^-1 =A^T

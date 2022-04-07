@@ -1,0 +1,19 @@
+combinatorics
+                                                            n!
+    Number of r-permutations without repetition: P(n,r) = ------
+                                                          (n-r)!
+
+                                               r
+    Number of r-permutations with repetition: n
+
+                                                                                   n!
+    Number of n-permutations with indistinguishable elements: P(n,r) = ----------------------------
+                                                                        (n_1! * n_2! * ... * n_k!)
+
+                                                              n!
+    Number of r-combinations without repetition: C(n,r) = -----------
+                                                          r! * (n-r)!
+
+                                                            (n+r-1)!
+    Number of r-combinations with repetition: C(n+r-1,r) = -----------
+                                                            r! * (n-1)!

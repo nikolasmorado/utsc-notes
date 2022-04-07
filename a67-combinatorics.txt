@@ -1,0 +1,87 @@
+product rule
+    if a procedure can be broken down into 2 task with n_1 and n_2 ways to do each one, there are n_1*n_2 ways to do the task
+
+    n_1 * n_2 * ... * n_m
+
+sum rule
+    a task can be done in n_1 OR n_2 ways (independant) then you have n_1 + n_2 ways of doing the task
+
+inclusion exclusion principle
+    subtraction rule
+    if a task can be done in n_1 or n_2 ways, add n_1 and n_2 but subtract the common ways
+
+division rule
+    there are n/d ways to do a task if it can be carried out in n ways
+    for every way w, there are d of the n ways
+
+tree diagram
+    a tree consists of a node called the root
+        each node other than the root can have branches to other nodes
+        a node that does not branch into another node is a leaf
+
+pigeonhole principle
+    php
+    k+1 or more objects are placed into k boxes
+        at least one box contains two or more objects
+
+permutation
+    order matters
+
+    sometimes called/pronounced
+        from n sample r
+        nPr
+        
+    0 <= r <= n
+
+    P(n,r) = C(n,r) * r!
+
+    no repetition of elements
+    
+        P(n,r)=n!/(n-r)!
+
+                    n!
+        P(n,r) = --------
+                  (n-r)!
+    
+    with repetition of the elements
+        
+        P(n,r)=n^r
+
+                  r
+        P(n,r) = n
+
+    indistinguishable objects
+        n!/(n_1! * n_2! * ... * n_k!)
+
+
+
+combination
+    order does not matter
+
+
+    n choose r
+    nCr
+    binomial coefficient
+
+    without repetition of elements
+
+        C(n,r) = C(n,n-r)
+
+        C(n,r)=n!/(r!*(n-r)!)
+
+                    n!
+        C(n,r) = -------------
+                r! * (n-r)!
+
+    with repetition of elements
+
+        C(n,r) is for distinct objects, think as an arragement of |'s and O's (bars and stars theorem)
+
+        C(n+r-1, r) = (n+r-1)!/(r! * (n-1)!)
+
+                        (n+r-1)!
+        C(n+r-1, r) = --------------
+                       r! * (n-1)!
+
+Cut Edge
+    

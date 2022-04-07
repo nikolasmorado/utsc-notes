@@ -1,0 +1,90 @@
+experiment
+    a procedure that yields one of a given set of outcomes
+
+sample space
+    set of possible outcomes from an experiment
+    
+    can be countably infinite
+        not uncountably infinite
+
+    represented by S
+
+event
+    subset of sample space
+
+probability distrobution
+    function that maps from a sample space to R 
+
+    Sum p(s) = 1
+    s in S
+
+    p(s) is the probability of getting s from S in an experiment
+
+uniform distrobution
+    all outcomes are equally likely
+
+probability of events
+    the probability of an event E is the sum of probabilities of the outcomes in each
+
+    p(E) = Sum p(s)
+          s in E 
+    
+probability of complements of events
+    S = E union Ebar
+    1-Ebar = E
+
+conditional probability
+    probability of E if F has occurred
+
+    p(E|F) = p(E intersect F)/p(F)
+
+independence
+    two events E and F are independant iff
+        p(E intersect F) = p(E) * p(F)
+    means they dont impact eachother
+
+    P(E|F) = P(E)
+
+bernoulli trials and binomial distribution
+    an experiment exists
+        2 possible outcomes p and q 
+        experiment is done n times
+        each attempt is called a bernoulli trial
+        each trial is mutually independant
+    
+    to find the probability of k successes in n trials
+        C(n, k) k successes
+        probability of each is p^k q^n-k
+
+        so the probability of k successes in n trials is 
+        C(n,k) p^k q^n-k
+
+random variable
+    rv 
+    a function from the sample space of an experiment to R
+    
+    not variable
+        poor name
+    upper case letter convention
+    standard function notation
+
+distribution
+    let S be a sample space
+    ..  p ..   probability distribution on S
+    ..  X ..   RV                       ..
+
+    p(X=r) is the probability that X(s) equals r 
+        sum of all probabilities p(s) over all outcomes s with X(s) = r
+
+expected value
+    mean
+    weighted average
+    expectation
+
+    undefined if S is infinite
+    
+      Sum (p(s) * X(s))
+    s in S
+
+    
+     
