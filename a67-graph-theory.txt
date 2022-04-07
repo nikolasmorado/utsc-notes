@@ -1,7 +1,45 @@
 graph
     set of nodes and edges
 
-    G = (V, E)
+    graph
+        G = (V, E)
+    edge
+        e = (u, v)
+
+        connects two nodes
+            not directional unless otherwise stated
+        (u, v) = (v, u)
+            an edge connecting a node to itself is a loop
+
+        u and v are nodes, the endpoints of e
+            adjacent in G
+            neighbours in G
+
+        e is in E
+
+        e is incident with u and v
+            touching?
+            shares a node?
+    
+    nodes
+        letters
+        v is in V
+
+        neightbourhood of v
+            N(v) = { u in V | (v, u) in E}
+                all points that share an edge
+
+        degree of v
+            deg(v) = |N(v)|
+            number of edges that are incident with v
+                if its incident with an edge it means there is another node
+        
+            diagraphs
+                in-degree
+                    edges going into node
+                out-degree
+                    edges going out of node
+
 
     diagraph - directional graph
         graph where edges are directional
@@ -20,17 +58,116 @@ graph
           |   |
           O - O
 
+handshaking theorem
+    let G = (V, E) be a graph
 
+    2 * |E| = Sum   deg(v)
+             v in V
 
-nodes
-    verticies
+    twice the number of edges is equal to the sum of the nodes' degrees
 
-edge
-    connects two nodes
-    not directional unless otherwise stated
-        (u, v) = (v, u)
-    an edge connecting a node to itself is a loop
+    each edge contributes 2 to the sum of the degree of nodes
 
-mu
+complete graphs
+    let G = (V, E) be a graph
+    
+    G is complete if there is an edge connecting every node
 
+    denoted by K_n
 
+    ex  O - O
+        | /
+        O
+
+cycles
+    for n >= 3 consider the graph G = (V, E)
+        V = {v_1, v_2, ..., v_n}
+        E = {(v_1,v_2), (v_2,v_3), ..., (v_{n-1},v_n), (v_n,v_1)}
+
+        |V| = |E| = n
+
+        closed
+
+        ex  O - O
+            |   |
+            O - O
+
+paths
+    for n > 0 consider the graph G = (V, E)
+        V = {v_1, v_2, ..., v_n}
+        E = {(v_1,v_2), (v_2,v_3), ..., (v_{n-1},v_n), (v_n,v_1)}
+    
+
+    open
+
+    ex  O - O
+        |
+        O - O 
+
+bipartite graph
+    let G = (V, E) be a graph
+        V can be partitioned into subsets V1 and V2
+
+        for every pair of nodes in V (u, v)
+            (u,v) is in E iff they do not share a subset
+
+    complete bipartite
+        every node in v1 is adjacent to every node in v2
+
+        denoted by |V1| = m and |V2| = n
+            K_{m, n}
+
+subgraphs
+    G = (V, E)          H = (W, F)
+    H is a subgraph of G iff w is a subset of V and F is a subset of E
+        every element of W is in V and every element of F is in E
+    
+    proper subgraph
+        G != H
+
+induced subgraphs
+    G = (V, E)          W is a nonempty subset of V
+        the subgraph induced by W is H = (W, F)
+            F contains an edge in E iff both endpoints are in W
+
+    to construct
+        G = (V, E)
+        Remove all edges that are incident with nodes not in W
+        Remove all nodes not in W
+
+isomorphic graphs
+    2 graphs..
+        G1 = (V1, E1)
+        G2 = (V2, E2)
+    ..are isomorphic iff theres a 1to1 and onto function f 
+    from V1 to V2 such that
+        for every pair of nodes (u, v) in V1
+            (u, v) in E1 <=> (f(u), f(v)) in E2
+
+    the function f is an isomorphism
+
+    relabling the nodes of G1 to create G2
+
+    a 1to1 and onto functions are called a bijection
+        isomorphisms are bijections
+    
+    the inverse of a bijection is also a bijection
+
+    edges are preserved if when f is applied to
+    the endpoints of an edge E1
+        the resulting endpoints are the edge E2
+
+path in a graph
+    n = nonnegative integer
+    G = (V, E)
+    u and v = nodes in V
+
+    sequence of edges
+
+connectivity
+    connected iff theres a path between any distinct pair of nodes
+
+    can not draw a line through it without cutting through an edge
+
+    connected component
+        connected subgraph that is not a proper subgraph
